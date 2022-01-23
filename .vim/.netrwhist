@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/Users/kyosukefujiki/dev/article'
+let g:netrw_dirhist_4='/Users/kyosukefujiki/dev/Docker-prac/docker/php70-apache'
+let g:netrw_dirhist_3='/Users/kyosukefujiki/dev/javascript-prac'
+let g:netrw_dirhist_2='/Users/kyosukefujiki/dev/kyo-home/public'
+let g:netrw_dirhist_1='/Users/kyosukefujiki/dev/kyo-home/node_modules'
