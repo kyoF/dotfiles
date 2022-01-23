@@ -1,0 +1,40 @@
+set nocompatible
+filetype plugin indent off
+
+if has('vim_starting')
+  set runtimepath+=~/.vim/bundle/neobundle.vim
+  call neobundle#rc(expand('~/.vim/bundle'))
+endif 
+
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/neosnippet.vim'
+
+filetype plugin indent on
+
+autocmd BufRead,BufNewFile *.py setfiletype python
+autocmd BufRead,BufNewFile *.rb setfiletype ruby
+" 文字コードをutf8に設定
+set fenc=utf-8
+" 編集中のファイルが変更されたら自動で読み直す
+set autoread
+" 現在の行を強調表示
+set cursorline
+" 行番号を表示
+set number
+" 対応する括弧を強調表示
+set showmatch
+" タブキーの文字幅
+set softtabstop=2
+" 検索結果をハイライト表示
+set hlsearch
+" 対応する括弧を表示
+set showmatch matchtime=1
+
+" html/xml閉じタグ自動補完
+augroup MyXML
+  autocmd!
+  autocmd Filetype xml inoremap <buffer> </ </<C-x><C-o>
+  autocmd Filetype html inoremap <buffer> </ </<C-x><C-o>
+augroup END
