@@ -1,5 +1,3 @@
-autocmd BufRead,BufNewFile *.py setfiletype python
-autocmd BufRead,BufNewFile *.rb setfiletype ruby
 " 文字コードをutf8に設定
 set fenc=utf-8
 " 編集中のファイルが変更されたら自動で読み直す
@@ -24,52 +22,33 @@ augroup MyXML
   autocmd Filetype html inoremap <buffer> </ </<C-x><C-o>
 augroup END
 
-"--------------------------------------------------------------------------
-" neobundle
-set nocompatible               " Be iMproved
-filetype off                   " Required!
+" ctrl+eでnerdtreeを開く
+:command NT NERDTree
 
-if has('vim_starting')
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
+"Start deins-----------------------------
+if &compatible
+  set nocompatible               " Be iMproved
 endif
 
-call neobundle#begin(expand('~/.vim/bundle/'))
+set runtimepath+=/Users/kyosukefujiki/dotfiles/.vim/dein/repos/github.com/Shougo/dein.vim
 
-filetype plugin indent on     " Required!
+if dein#load_state('~/dotfiles/.vim/dein')
+  call dein#begin('~/dotfiles/.vim/dein')
 
-" Installation check.
-if neobundle#exists_not_installed_bundles()
-  echomsg 'Not installed bundles : ' .
-        \ string(neobundle#get_not_installed_bundle_names())
-  echomsg 'Please execute ":NeoBundleInstall" command.'
-  "finish
+  let s:toml = '~/dotfiles/.vim/dein/dein.toml'
+  call dein#load_toml(s:toml, {'lazy':0})
+
+  call dein#end()
+  call dein#save_state()
 endif
 
-"GitHubリポジトリにあるプラグインを利用場合
-NeoBundle 'tpope/vim-fugitive'
+colorscheme molokai
 
-"GitHub以外のGitリポジトリにあるプラグインを利用する場合
-NeoBundle 'git://git.wincent.com/command-t.git'
-
-"Git以外のリポジトリにあるプラグインをを利用する場合
-NeoBundle 'http://svn.macports.org/repository/macports/contrib/mpvim/'
- NeoBundle 'https://bitbucket.org/ns9tks/vim-fuzzyfinder'
-
-NeoBundle 'scrooloose/nerdtree'
-
-"カラースキーマ
-colorscheme desert
-if &term =~ "xterm-256color" || "screen-256color"
-  set t_Co=256
-  set t_Sf=[3%dm
-  set t_Sb=[4%dm
-elseif &term =~ "xterm-color"
-  set t_Co=8
-  set t_Sf=[3%dm
-  set t_Sb=[4%dm
-endif
-
+filetype plugin indent on
 syntax enable
-hi PmenuSel cterm=reverse ctermfg=33 ctermbg=222 gui=reverse guifg=#3399ff guibg=#f0e68c
 
-call neobundle#end()
+" If you want to install not installed plugins on startup.
+if dein#check_install()
+  call dein#install()
+endif
+"End dein-------------------------
