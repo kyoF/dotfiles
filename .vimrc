@@ -28,9 +28,14 @@ augroup END
 "Start vim plug-----------------------------
 call plug#begin('~/.vim/plugged')
 
+" ファイルを素早く開く
 Plug 'Shougo/unite.vim'
+" ファイル一覧表示
 Plug 'preservim/nerdtree'
+" カラースキーマ
 Plug 'tomasr/molokai'
+" コメントのON/OFF
+Plug 'tomtom/tcomment_vim'
 
 call plug#end()
 "End vim plug-------------------------
