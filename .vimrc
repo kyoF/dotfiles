@@ -22,33 +22,17 @@ augroup MyXML
   autocmd Filetype html inoremap <buffer> </ </<C-x><C-o>
 augroup END
 
-" ctrl+eでnerdtreeを開く
+" NTでnerdtreeを開く
 :command NT NERDTree
 
-"Start deins-----------------------------
-if &compatible
-  set nocompatible               " Be iMproved
-endif
+"Start vim plug-----------------------------
+call plug#begin('~/.vim/plugged')
 
-set runtimepath+=/Users/kyosukefujiki/dotfiles/.vim/dein/repos/github.com/Shougo/dein.vim
+Plug 'Shougo/unite.vim'
+Plug 'preservim/nerdtree'
+Plug 'tomasr/molokai'
 
-if dein#load_state('~/dotfiles/.vim/dein')
-  call dein#begin('~/dotfiles/.vim/dein')
-
-  let s:toml = '~/dotfiles/.vim/dein/dein.toml'
-  call dein#load_toml(s:toml, {'lazy':0})
-
-  call dein#end()
-  call dein#save_state()
-endif
+call plug#end()
+"End vim plug-------------------------
 
 colorscheme molokai
-
-filetype plugin indent on
-syntax enable
-
-" If you want to install not installed plugins on startup.
-if dein#check_install()
-  call dein#install()
-endif
-"End dein-------------------------
