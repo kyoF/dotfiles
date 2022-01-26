@@ -33,21 +33,21 @@ augroup END
 
 call plug#begin('~/.vim/plugged')
   " ファイルを素早く開く
-	Plug 'Shougo/unite.vim'
+  Plug 'Shougo/unite.vim'
   " ファイル一覧表示
   Plug 'preservim/nerdtree'
   " カラースキーマ
   Plug 'tomasr/molokai'
   " コメントのON/OFF
   Plug 'tomtom/tcomment_vim'
-	" Gitを使う
-	Plug 'tpope/vim-fugitive'
-	" インデントを可視化
-	Plug 'nathanaelkane/vim-indent-guides'
-	let g:indent_guides_enable_on_vim_startup = 1
-	" statuslineをカッコよく
-	Plug 'vim-airline/vim-airline'
-	Plug 'vim-airline/vim-airline-themes'
+  " Gitを使う
+  Plug 'tpope/vim-fugitive'
+  " インデントを可視化
+  Plug 'nathanaelkane/vim-indent-guides'
+  let g:indent_guides_enable_on_vim_startup = 1
+  " statuslineをカッコよく
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 colorscheme molokai
