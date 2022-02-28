@@ -19,9 +19,5 @@ alias ll='ls -alFG'
 alias c='clear'
 
 # gitコマンドのエイリアス
-alias gitall='(){git add -A && git commit -m "$1" && git push}'
+alias gitacp='(){git add -A && git commit -m "$1" && git push}'
 alias gs='git status'
-alias ga='git add -A'
-alias gc='git commit -m'
-alias gpush='git push'
-alias gpull='git pull'
