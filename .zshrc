@@ -1,3 +1,5 @@
+# export PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin
+
 # git
 autoload -Uz vcs_info
 setopt prompt_subst
@@ -21,3 +23,5 @@ alias c='clear'
 # gitコマンドのエイリアス
 alias gitacp='(){git add -A && git commit -m "$1" && git push}'
 alias gs='git status'
+
+export PATH="$PATH:/Users/kyosukefujiki/Applications/flutter/bin"
