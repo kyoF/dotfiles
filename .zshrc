@@ -23,5 +23,8 @@ alias c='clear'
 # gitコマンドのエイリアス
 alias gitacp='(){git add -A && git commit -m "$1" && git push}'
 alias gs='git status'
+alias gb='git branch'
+alias gc='git checkout'
+alias gl='git log'
 
 export PATH="$PATH:/Users/kyosukefujiki/Applications/flutter/bin"
